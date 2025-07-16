@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zn-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>EachMoon Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="EachMoon.ico"/>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+            background-color: rgb(50, 50, 50);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        body::before {
+            transition: background-image 0.5s ease;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://api.rls.ovh/vertical') center/cover no-repeat;
+            @media (orientation: landscape) {
+                background-image: url('https://api.rls.ovh/horizontal');
+            }
+        }
+        .title{
+            height: auto;
+            width: 200px;
+            line-height: 10px;
+            border: 5px solid rgb(100, 100, 100);
+            border-width: 0 0 5px 0;
+            text-align: center;
+        }
+        .bar{
+            display: flex;
+            height: auto;
+            width: 120px;
+            border-radius: 10px 10px 0 0;
+            border: 5px solid rgb(100, 100, 100);
+            justify-content: center;
+            align-items: center;
+        }
+        .navbar{
+            position: fixed;
+            display: flex;
+            color: white; 
+            /* background-color: rgb(50, 50, 50); */
+            font-size: 32px; 
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            z-index: 100;
+        }
+        .text{
+            color: white;
+            font-size: 24px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        .placeholder{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-color: rgb(50, 50, 50);
+            visibility: hidden;
+        }
+        .longtext{
+            min-width: 0;
+            overflow-wrap: break-word; 
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder"></div>
+    <div class="navbar">
+        <div class="title">
+            <br><br>
+            <p>EachMoon</p>
+            <p>Studios</p>
+        </div>
+        <div class="bar" id="Home" 
+        onmouseenter="document.getElementById('Home').style.borderColor='white'"
+        onmouseleave="document.getElementById('Home').style.borderColor='rgb(100, 100, 100)'"
+        onclick="window.location.href='./navbar/home.html'">
+        <p>Home</p></div>
+        <div class="bar" id="Proclamation" 
+        onmouseenter="document.getElementById('Proclamation').style.borderColor='white'"
+        onmouseleave="document.getElementById('Proclamation').style.borderColor='rgb(100, 100, 100)'"
+        onclick="window.location.href='./navbar/Proclamation.html'">
+            <div class="longtext"><p>Proclamation</p></div>
+        </div>
+        <div class="bar" id="Project" 
+        onmouseenter="document.getElementById('Project').style.borderColor='white'"
+        onmouseleave="document.getElementById('Project').style.borderColor='rgb(100, 100, 100)'"
+        onclick="window.location.href='./navbar/Project.html'">
+        <p>Project</p></div>
+        <div class="bar" id="About"
+        onmouseenter="document.getElementById('About').style.borderColor='white'"
+        onmouseleave="document.getElementById('About').style.borderColor='rgb(100, 100, 100)'"
+        onclick="window.location.href='./navbar/about.html'">
+        <p>About</p></div>
+    </div>
+    <div class="text">
+        <br><br><br><br>
+        <p>Welcome to EachMoon Studios!</p>
+        <!-- <img src="https://api.rls.ovh/adaptive" alt="Can't Show Image?Try To Refresh." height="1080px" width="auto"> -->
+        <!-- <img src="https://api.rls.ovh/adaptive" alt="Can't Show Image"> -->
+        <!-- <img src="https://picsum.photos/200" alt="Can't Show Image"> -->
+    </div>
+</body>
