@@ -1,0 +1,20 @@
+name: Self-Hosted Runner Demo
+on: [push] # 触发条件（如 push/pull_request）
+
+jobs:
+  build:
+    # 关键：指定自托管运行器的标签
+    runs-on: [self-hosted, windows] 
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Run PowerShell command
+        shell: powershell
+        run: |
+          Write-Host "Hello from Windows Runner!"
+          Get-ComputerInfo | Select-Object WindowsVersion
+          
+      - name: Build project (示例)
+        run: msbuild MyProject.sln
